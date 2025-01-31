@@ -1,17 +1,16 @@
-name: "Profile IAC"
+name: "Vprofile IAC"
 on:
   push:
     branches:
       - main
       - stage
-    paths:
+    paths:  
       - terraform/**
   pull_request:
     branches:
       - main
     paths:
       - terraform/**
-
 
 env:
  # Credentials for deployment to AWS
@@ -21,7 +20,6 @@ env:
  BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE}}
  AWS_REGION: us-east-2
  EKS_CLUSTER: vprofile-eks
-
 
 jobs:
    terraform:
